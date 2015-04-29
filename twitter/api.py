@@ -3540,7 +3540,7 @@ class Api(object):
         network outages it will return an HTML failwhale page.
         """
         try:
-            data = simplejson.loads(json)
+            data = simplejson.loads(json.decode())
             self._CheckForTwitterError(data)
         except ValueError:
             if "<title>Twitter / Over capacity</title>" in json:
